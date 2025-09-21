@@ -1,0 +1,677 @@
+
+/* ===============================
+   Header Section
+=================================*/
+.headerSection {
+  width: 100%; /* Always full width */
+  position: relative;
+  background: #5A3E2D;
+  padding: 30px 0;
+  margin: 0;
+  left: 0;
+}
+
+/* ======== Breadcrumb =========*/
+.breadcrumbNav {
+  text-align: center;
+  margin-bottom: 12px;
+  font-family:'playfair Display', Georgia, serif;
+  
+}
+
+.breadcrumbLink {
+  color:  #fdf4eb;
+  text-decoration: none;
+  font-weight: 400;
+  transition: color 0.3s ease, text-decoration 0.3s ease;
+  
+}
+
+.breadcrumbLink:hover {
+  color: #ffffff;
+  text-decoration: underline;
+  font-weight: 600;
+}
+
+.breadcrumbDivider {
+  margin: 0 8px;
+  font-weight: 400;
+  color: #fdf4eb;
+}
+
+.breadcrumbCurrent {
+  color: #ffe1c4;
+  font-weight: 900;
+  
+}
+
+/* ====== Page Title ======*/
+
+.pageTitle {
+  font-family: "Coffees Demo", cursive; /* fallback */
+  font-size: 90px;   /* adjust size */
+  color: #e6e0d4;         /* coffee white */
+  text-align: center;
+  margin: 0;
+}
+
+@font-face {
+  font-family: "Coffees Demo";
+  src: url("../assets/fonts/CoffeesDemoRegular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* ======= Search Box Wrapper =========*/
+.searchWrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+/* ===============================
+   Grid + Card coffees
+=================================*/
+.container {
+  padding: 40px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Always 3 per row */
+  gap: 30px;
+}
+
+.card {
+  background-color: rgba(255, 255, 255, 0.15);
+  border-radius: 16px;
+  padding: 16px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  min-height: 350px;  /* 👈 fixes height */
+  display:flex;
+  flex-direction: column;
+  justify-content: space-between; /* balances content */
+}
+
+.card:hover {
+  transform: translateY(-15px);
+  box-shadow: 2px 9px 15px #2e1403;
+}
+
+.activeCard {
+  border: 2px solid #5A3E2D;
+}
+
+.image {
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.name {
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 30px;
+  font-weight: 700;
+  color: #4e342e;
+}
+
+.description {
+  font-size: 0.9rem;
+  color: #555;
+  margin-bottom: 2px;
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.price {
+  font-weight: bold;
+  color: #5A3E2D;
+  margin-bottom: 8px;
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+@media (max-width: 900px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 per row */
+  }
+}
+
+@media (max-width: 600px) {
+  .grid {
+    grid-template-columns: 1fr; /* 1 per row */
+  }
+}
+
+/* ======== Add Button =========*/
+
+.addButton {
+  padding: 10px 16px;
+  border: none;
+  border-radius: 8px;
+  background: #5A3E2D;
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.addButton:hover {
+  background: #a57c62;
+}
+
+/* ======== No Results =========*/
+.noResults {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 1rem;
+  color: #555;
+}
+
+/* ========== Wishlist =============*/
+
+.wishlistBtn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  transition: background 0.2s ease;
+  z-index: 2;
+}
+
+.wishlistIcon {
+  width: 20px;
+  height: 20px;
+  filter: brightness(0) saturate(100%); /* black default */
+}
+
+.activeWishlist .wishlistIcon {
+  filter: invert(39%) sepia(87%) saturate(5926%) hue-rotate(347deg) brightness(96%) contrast(119%);
+  /* makes icon red */
+}
+
+
+
+/* ===============================
+     Home
+=================================*/
+
+/* ====== Welcome Section ======= */
+
+.welcomeSection {
+  background: #5A3E2D url('../assets/coffee_banner.jpg') no-repeat center center/cover;
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  position: relative;
+}
+
+.welcomeSection::after {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.7); /* overlay for readability */
+}
+
+.welcomeContent {
+  position: relative;
+  z-index: 1;
+  max-width: 600px;
+  padding: 1rem;
+}
+
+@font-face {
+  font-family: "CoffeeTown";
+  src: url("../assets/fonts/Coffee Town.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+.welcomeTitle {
+  font-family: "CoffeeTown", cursive; /* fallback */
+  font-size: 70px;   /* adjust size */
+  margin-bottom: 1rem;
+}
+
+.welcomeSubtitle {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.exploreBtn {
+  background: #5A3E2D; /* coffee brown */
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  font-size: 1rem;
+  border-radius: 25px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.exploreBtn:hover {
+  background: #3e2723;
+}
+
+/* ====== Comment ====== */
+
+.section {
+  padding: 2rem;
+  position: relative;
+}
+
+.heading {
+  margin-bottom: 1rem;
+  font-size:35px;
+  font-weight:bolder;
+  font-family:'Coffees Demo', cursive;
+  color: #5A3E2D;
+  text-align: center;
+}
+
+.scrollArea {
+  display:flex;
+  gap: 20px;
+  overflow-x: auto;          /* horizontal scroll */
+  padding-bottom: 0.5rem;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;       /* hide scrollbar (Firefox) */
+}
+
+.scrollArea::-webkit-scrollbar {
+  display: none;            /* hide horizontal scrollbar in Chrome/Safari */
+}
+
+.card {
+  flex: 0 0 250px;          /* fixed width */
+  background-color: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(6px);
+  border-radius: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 15px;
+  scroll-snap-align: start;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;       /* horizontal center */
+  justify-content: center;   /* vertical center */
+  text-align: center;
+  min-height: 180px;
+}
+
+.arrow {
+  position: absolute;
+  top: 65%;
+  transform: translateY(-50%);
+  background: #5A3E2D;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 5;
+  transition: background 0.3s ease;
+}
+
+.arrow:hover {
+  background: #3e2723;
+}
+
+.left {
+  left: 10px;
+}
+
+.right {
+  right: 10px;
+}
+
+.name {
+  font-weight: bold;
+  margin-bottom: 20px;
+  font-family: 'playfair Display', Georgia, serif;
+}
+
+.message {
+  max-height: 90px;          /* limit height */
+  overflow-y: auto;           /* vertical scroll if message too long */
+  font-size: 15px;
+  color: #555;
+  padding-right: 0.25rem;     /* space for scrollbar */
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+/* ===============================
+     Cart
+=================================*/
+
+.cartContainer {
+  padding: 20px;
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.emptyCart {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #555;
+}
+
+.cartTable {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+  background-color: rgba(0, 0, 0, 0.15);
+}
+
+.cartTable th,
+.cartTable td {
+  padding: 12px;
+  text-align: left;
+}
+
+.cartTable th {
+  background-color: #5A3E2D;
+  color: white;
+  font-weight: 600;
+}
+
+.cartRow {
+  border-bottom: 1px solid #eee;
+  transition: background 0.15s ease;
+}
+
+.cartRow:hover {
+  background-color: #fff9f3;
+}
+
+.productCell {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+}
+
+.productCell img {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 100px;
+}
+
+.qtyButton {
+  padding: 4px 10px;
+  margin: 0 4px;
+  background-color: #6f4e37;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.qtyButton:hover {
+  background-color: #523828;
+}
+
+.removeButton {
+  border: none;
+  color: #e00;
+  background: none;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.removeButton:hover {
+  color: #700;
+}
+
+.cartFooter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+  font-size: 1.1rem;
+}
+
+.checkoutButton {
+  padding: 10px 18px;
+  background: #6f4e37;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.checkoutButton:hover {
+  background: #523828;
+}
+
+
+/* ===============================
+     Checkout
+=================================*/
+.checkoutContainer{
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.checkoutForm h2,
+.checkoutSummary h2 {
+  color: #333;
+  font-family: 'playfair Display', Georgia, serif;
+}
+
+.checkoutForm input {
+  width: 90%;
+  padding: 14px;
+  margin-bottom: 15px;
+  margin-left: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.checkoutForm button {
+  width: 100%;
+  padding: 10px;
+  background-color: #6f4e37;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.checkoutForm button:hover {
+  background-color: #5a3e2f;
+}
+
+.checkoutSummary p,
+.checkoutSummary h3 {
+  margin: 5px 0;
+}
+
+.checkoutContainer {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 20px;
+}
+
+/* Billing form takes larger space */
+.checkoutForm {
+  flex: 3; /* larger */
+  padding: 20px;
+  border-radius: 10px;
+  background: #fff;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* Order summary takes smaller width */
+.checkoutSummary {
+  flex: 1; /* smaller */
+  max-width: 250px; /* compact width */
+  padding: 20px;
+  border-radius: 10px;
+  background: #f8f8f8;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  height: fit-content; /* shrink to content */
+}
+
+/* Items in summary */
+.summaryItems {
+  max-height: 400px; /* optional: scroll if many items */
+  overflow-y: auto;
+  margin-bottom: 15px;
+}
+
+.summaryItem {
+  display: flex;
+  justify-content: space-between;
+  margin: 5px 0;
+}
+
+.summaryTotals p, .summaryTotals h3 {
+  margin: 5px 0;
+  font-weight: bold;
+  text-align: right;
+}
+
+.paymentMethod {
+  display: flex;
+  gap: 20px; /* spacing between options */
+  align-items: center; /* vertically aligns text with radio */
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.paymentMethod label {
+  display: flex;
+  align-items: center; /* vertically centers text with radio */
+  gap: 8px; /* spacing between radio and text */
+  margin-bottom: 10px;
+  margin-right: 10px;
+  cursor: pointer;
+  justify-content:start;
+}
+
+.paymentMethod input[type="radio"] {
+  flex-shrink: 0; /* prevents radio from stretching */
+}
+
+.inputError {
+  border: 1px solid red;
+}
+
+.error {
+  color: red;
+  font-size: 12px;
+  margin-top: 4px;
+}
+
+/* ===============================
+     Wishlist
+=================================*/
+
+/* Wishlist container - grid layout */
+.wishlistContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.wishlistCard {
+  width: 200px;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  overflow: hidden;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.315);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  background-color: #ffffff5e;
+}
+
+.wishlistCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 12px rgba(0,0,0,0.2);
+}
+
+.wishlistImage {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+}
+
+.cardInfo {
+  padding: 10px;
+}
+
+.name {
+  font-size: 16px;
+  margin: 5px 0;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.price {
+  font-size: 14px;
+  color: #555;
+}
+
+.buttonGroup {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 10px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.addToCartBtn {
+  padding: 8px 12px;
+  background: #5A3E2D;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.addToCartBtn:hover {
+  background: #7a553e;
+  transform: scale(1.05);
+}
+
+.removeBtn {
+  padding: 8px 12px;
+  background: #ccc;
+  color: #333;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.removeBtn:hover {
+  background: #aaa;
+  transform: scale(1.05);
+}

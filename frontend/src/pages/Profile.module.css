@@ -1,0 +1,119 @@
+.profilePage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.profileCard {
+  background: #ffffff;
+  padding: 30px 40px;
+  border-radius: 20px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+  text-align: center;
+  max-width: 400px;
+  width: 100%;
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+}
+
+.avatarSection {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.avatar {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 5px solid #e0d6d1;
+  object-fit: cover;
+}
+
+.nameRow {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: center;
+}
+
+.name {
+  font-size: 32px;
+  font-weight: 600;
+  color: #4b3832; /* coffee dark */
+}
+
+.email, .phone, .address {
+  font-size: 20px;
+  color: #6d6a6a;
+}
+
+.nameInput {
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  width: 100%;
+}
+
+.editBtn, .saveBtn, .cancelBtn {
+  padding: 10px 15px;
+  margin-top: 10px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: 0.3s ease;
+  
+  
+}
+
+.editBtn {
+  background: #4b3832;
+  color: white;
+  width: 30%;
+}
+
+.buttonGroup {
+  display: flex;
+  gap: 10px; /* buttons la space */
+}
+
+.saveBtn {
+  padding: 8px 16px;
+  background-color: #4b3832;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+  min-width: 40px;
+}
+
+.cancelBtn {
+  padding: 8px 16px;
+  background-color: #f44336;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+  min-width: 40px;
+}
+
+
+.editBtn:hover {
+  background: #3a2c27;
+}
+.saveBtn:hover {
+  background: #3a2c27;
+}
+.cancelBtn:hover {
+  background: #b71c1c;
+}
+
+/* Loading & Error */
+.loading, .error {
+  text-align: center;
+  font-size: 16px;
+  color: #4b3832;
+}

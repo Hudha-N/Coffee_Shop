@@ -1,0 +1,99 @@
+.footer {
+  background: #5A3E2D;
+  color: #eee;
+  padding: 40px 20px 20px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+
+.left {
+  flex: 1;
+  min-width: 220px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  
+}
+
+.logoImg {
+  height: 150px;   /* adjust size */
+  width: auto;
+  cursor: pointer;
+ 
+}
+
+.desc {
+  margin-top: 10px;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.middle {
+  flex: 1;
+  min-width: 180px;
+}
+
+.middle h3,
+.right h3 {
+  margin-bottom: 10px;
+  font-size: 16px;
+  color: #fff;
+}
+
+.middle ul {
+  list-style: none;
+  padding: 0;
+}
+
+.middle ul li {
+  margin: 8px 0;
+}
+
+.middle ul li a {
+  text-decoration: none;
+  color: #bbb;
+  transition: color 0.3s;
+}
+
+.middle ul li a:hover {
+  color: #fff;
+}
+
+.right {
+  flex: 1;
+  min-width: 180px;
+}
+
+.socials {
+  display: flex;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+.socials a {
+  font-size: 20px;
+  color: #bbb;
+  transition: color 0.3s;
+}
+
+.socials a:hover {
+  color: #fff;
+}
+
+.bottom {
+  text-align: center;
+  margin-top: 30px;
+  border-top: 1px solid #1b110b;
+  padding-top: 15px;
+  font-size: 13px;
+  color: #777;
+}

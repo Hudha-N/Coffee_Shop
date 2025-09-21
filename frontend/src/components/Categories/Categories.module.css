@@ -1,0 +1,68 @@
+.categories {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 30px;
+  padding: 40px;
+}
+
+/* Each card */
+.categoryCard {
+  background-color: rgba(255, 255, 255, 0.15);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: 'Playfair Display', Georgia, serif;
+}
+
+.categoryCard:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 18px rgba(0,0,0,0.25);
+}
+
+/* Centered Image */
+.image {
+  width: 260px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin: 0 auto 15px;
+  display: block;
+}
+
+/* Text */
+.name {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin: 5px 0 8px;
+  color: #5A3E2D;
+}
+
+
+/* Button with new color */
+.button {
+  display: inline-block;
+  background: #5A3E2D;   
+  color: #fff;
+  text-decoration: none;
+  padding: 8px 18px;
+  border-radius: 10px;
+  font-size: 0.9rem;
+  transition: background 0.3s ease;
+}
+
+.button:hover {
+  background: #3e2723;  
+}
+
+/* ✅ Responsive adjustments */
+@media (max-width: 768px) {
+  .categories {
+    grid-template-columns: 1fr;  /* 1 card per row on small screens */
+  }
+}
